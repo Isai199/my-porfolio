@@ -27,6 +27,6 @@ export class AppComponent {
   ) {
     const PopupElement = createCustomElement(PopupComponent, {injector});
 
-    customElements.define('popup-element', PopupElement);
+    //customElements.define('popup-element', PopupElement);
   }
 }
