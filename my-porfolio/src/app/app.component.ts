@@ -9,13 +9,8 @@ import { PopupService } from "./popup.service";
   selector: 'app-root',
   standalone: true,
   providers: [PopupService],
-  imports: [RouterOutlet, PopupComponent],
-  //templateUrl: './app.component.html',
-  template: `
-    <input #input value="Message" />
-    <button type="button" (click)="popup.showAsComponent(input.value)">Show as component</button>
-    <button type="button" (click)="popup.showAsElement(input.value)">Show as element</button>
-  `,
+  imports: [RouterOutlet, PopupComponent, NavbarComponent],
+  templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
