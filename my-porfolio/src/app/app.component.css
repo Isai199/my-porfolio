@@ -1,0 +1,43 @@
+
+/* TODO: definir bien los colores del hover, para amntener consistencia */
+.hero .underlined:hover {
+    color: var(--red-dark);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+    color: var(--dark-muted);
+}
+
+.profile-pic {
+    background-color: var(--red-light);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.hero div p:nth-child(2) {
+    color: var(--red);
+}
+
+.hero .profile-pic {
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.hero p:first-child {
+    margin-bottom: 1rem;
+}
+
+.hero p:nth-child(2) a {
+    margin: 0 0.4rem;
+}

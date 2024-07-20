@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 /* TODO: definir funte principal y secundarias, y su tamaño para cada seccion de la pagina */
+/* TODO: agregar la configuracion, para ordener las propiedades css por alfabeto */
+
+:root {
+    --dark: #0B090A;
+    --dark-muted: #161A1D;
+    --red-dark: #660708;
+    --red-muted: #A4161A;
+    --red: #BA181B;
+    --red-light: #E5383B;
+    --white: #FFFFFF;
+    --grey:  #D3D3D3;
+    --grey-light: #F5F3F4;
+    --grey-muted: #B1A7A6;
+}
 
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -8,8 +22,8 @@ body {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #0B090A;
-    background-color: #F5F3F4;
+    color: var(--dark);
+    background-color: var(--grey-light);
     margin: 0;
     font-size: 18px;
     line-height: 1.6;
@@ -19,6 +33,7 @@ p,
 ul,
 li,
 body,
+h1,
 a {
     margin: 0;
     padding: 0;
@@ -39,4 +54,40 @@ a {
     max-width: 96rem;
 }
 
+.text-2xl { /* Es el resultado de multiplicar la fuente base por 2 */
+    font-size: 1.5625rem;
+}
+
+.text-center {
+    text-align: center;
+}
+  
+.uppercase {
+    text-transform: uppercase;
+}
+
+.underlined:hover {
+    color: #D3D3D3;
+}
+
+.underlined {
+    position: relative;
+}
+
+.underlined:hover::after {
+    transform: scale(1);
+    background-color: currentColor;
+}
+
+.underlined::after {
+    content: "";
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    transform: scale(0);
+    transform-origin: middle;
+    transition: transform .30s ease;
+}
 

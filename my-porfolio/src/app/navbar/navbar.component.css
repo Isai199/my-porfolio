@@ -1,9 +1,8 @@
 /* TODO: Definir navbar para moviles */
 
 nav {
-    background-color: #161A1D;
-    font-size: 1.125rem;
-    color: #FFFFFF;
+    background-color: var(--dark-muted);
+    color: var(--white);
 }
 
 nav div {
@@ -11,10 +10,7 @@ nav div {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-}
-
-nav :first-child {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
 }
 
 ul {
@@ -25,29 +21,4 @@ ul {
 li {
     margin-left: 10px;
     margin-right: 10px;
-}
-
-.underlined:hover {
-    color: #D3D3D3;
-}
-
-.underlined {
-    position: relative;
-}
-
-.underlined:hover::after {
-    transform: scale(1);
-    background-color: currentColor;
-}
-
-.underlined::after {
-    content: "";
-    left: 0;
-    bottom: -4px;
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    transform: scale(0);
-    transform-origin: middle;
-    transition: transform .30s ease;
 }
