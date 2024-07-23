@@ -4,12 +4,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { createCustomElement } from "@angular/elements";
 import { PopupComponent } from "./popup/popup.component";
 import { PopupService } from "./popup.service";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   providers: [PopupService],
-  imports: [RouterOutlet, PopupComponent, NavbarComponent],
+  imports: [RouterOutlet, PopupComponent, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

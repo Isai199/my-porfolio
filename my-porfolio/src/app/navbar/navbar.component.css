@@ -12,13 +12,3 @@ nav div {
     padding: 15px;
     font-size: 1.125rem;
 }
-
-ul {
-    list-style: none;
-    display: flex;
-}
-
-li {
-    margin-left: 10px;
-    margin-right: 10px;
-}
