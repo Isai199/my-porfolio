@@ -125,6 +125,10 @@ button:active {
     text-transform: uppercase;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 .underlined:hover {
     color: #D3D3D3;
 }

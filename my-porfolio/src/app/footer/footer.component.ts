@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  // TODO: tratar de aplicar lo del navbar(url, nombres, titulos), pero desde el home, y que aplique para ambos(navbar y footer). 
 }
