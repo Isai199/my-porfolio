@@ -9,10 +9,9 @@
     <div>
         <p>Junior developer full stack</p>
         <p>
-            <!-- TODO: url de emkode -->
-            <a href="" target="_blank" class="underlined uppercase">Emkode</a>
-            <a href="https://www.cao.com.mx/" target="_blank" class="underlined uppercase">Cao</a>
-            <a href="https://segared.us/segared/index.php" target="_blank" class="underlined uppercase">Segared</a>
+            @for (companyUrl of companyUrls; track companyUrl.name){
+                <a [href]="companyUrl.url" target="_blank" class="underlined uppercase">{{ companyUrl.name }}</a> 
+            }
         </p>
     </div>
 </section>
@@ -30,6 +29,7 @@
 </section>
 
 <!-- TODO: implemetar esto para los modales -->
+<!-- TODO: Analizar si show as element se elimina o se queda, y hacer lo debido con ello -->
 <input #input value="Message" />
 <button type="button" (click)="popup.showAsComponent(input.value)">Show as component</button>
 <button type="button" (click)="popup.showAsElement(input.value)">Show as element</button>

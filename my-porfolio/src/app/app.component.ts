@@ -17,6 +17,22 @@ import { FooterComponent } from "./footer/footer.component";
 export class AppComponent {
   title = 'my-porfolio';
 
+  companyUrls = [
+    {
+      name: 'emkode',
+      url: 'https://www.emkode.com/?fbclid=IwY2xjawEaVEFleHRuA2FlbQIxMAABHambvVjFv9CPYU8yucI5PsCghc8stN9FyZvuSYpaAD7cxuDj9piQVO9RfA_aem_WCADCyySlCOLKyfBFdsvSA',
+    },
+    {
+      name: 'cao',
+      url: 'https://www.cao.com.mx/',
+    },
+    {
+      name: 'segared',
+      url: 'https://segared.us/segared/index.php',
+    },
+  ];
+
+  // TODO: Analizar este codigo, para ver si se quita o se queda, de momento muestra el modal o popup.
   constructor(
     injector: Injector,
     public popup: PopupService
