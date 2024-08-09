@@ -154,3 +154,10 @@ button:active {
     transition: transform .30s ease;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-grey-muted {
+    color: var(--grey-muted);
+}

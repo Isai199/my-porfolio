@@ -28,6 +28,32 @@
     </div>
 </section>
 
+<section class="proyects mx-auto max-w-8x1 text-center">
+    <h2 class="uppercase">proyects</h2>
+
+    <ul>
+        <li>
+            <article>
+                <div class="picture"></div>
+                <div>
+                    <div class="text-left">
+                        <p><strong>Pryect's name</strong>
+                        </p>
+                        <span class="text-grey-muted">
+                            <small>
+                                A little description
+                            </small>
+                        </span>
+                    </div>
+                    <!-- TODO: buscar un mejor icono de la flecha o arreglarlo con css -->
+                    <!-- NOTE: Aqui encontre con codigo: https://www.toptal.com/designers/htmlarrows/arrows/ -->
+                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
+                </div>
+            </article>
+        </li>
+    </ul>
+</section>
+
 <!-- TODO: implemetar esto para los modales -->
 <!-- TODO: Analizar si show as element se elimina o se queda, y hacer lo debido con ello -->
 <input #input value="Message" />
