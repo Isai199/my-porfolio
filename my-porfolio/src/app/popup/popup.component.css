@@ -1,10 +1,11 @@
+/* TODO: definie tamano y tipo de fuente para los textos */
 :host {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.6);
-    height: 100vh;
+    height: 100%;
     display: flex;
     border-top: 1px solid black;
     font-size: 24px;
@@ -13,11 +14,12 @@
 }
 
 .popup {
-    border: 1px solid var(--dark);
+    border: 1px solid var(--white);
     background-color: var(--grey-light);
-    width: 600px;
-    height: 300px;
     position: relative;
+    padding: 30px;
+    font-size: 1.4rem;
+    line-height: 1.5;
 }
 
 .popup button {
@@ -29,3 +31,43 @@
     padding: .4rem;
     font-size: 1rem;
 }
+
+.popup article {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.popup div:nth-child(2) {
+    min-width: 277px;
+    max-width: 550px;
+    flex: 1;
+}
+
+.popup ul {
+    display: inline;
+}
+
+.popup ul li {
+    display: flex;
+    width: 100%;
+}
+
+.popup ul li span:nth-child(1) {
+    flex: 1;
+}
+
+.popup ul li span:nth-child(2) {
+    flex: 2;
+}
+
+/* TODO: Ajustar una imagen, y que sea responsive */
+.picture {
+    width: 500px;
+    height: 500px;
+    background-color: var(--red-muted);
+    min-width: inherit;
+}
+

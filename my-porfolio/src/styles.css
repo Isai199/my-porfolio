@@ -40,6 +40,8 @@ ul,
 li,
 body,
 h1,
+h2,
+h3,
 a {
     margin: 0;
     padding: 0;
@@ -161,3 +163,5 @@ button:active {
 .text-grey-muted {
     color: var(--grey-muted);
 }
+
+/* TODO: Darle margen a los h1,h2,h3 y demas textos, y secciones */
