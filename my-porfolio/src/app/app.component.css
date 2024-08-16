@@ -1,6 +1,10 @@
 
 /* TODO: definir bien los colores del hover, para amntener consistencia */
 /* TODO: definir el espaciado que tendra el sitio, a los costados en mobile */
+h2 { /*TODO: checar si esto no afecta a los demas componentes*/
+    margin-bottom: 3rem;
+}
+
 .hero .underlined:hover {
     color: var(--red-dark);
 }
@@ -96,4 +100,36 @@
     line-height: 1;
     font-size: 1.7rem;
     font-family: inherit;
+}
+
+.experience ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+
+.experience li {
+    border: 1px solid var(--grey-muted);
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    flex: 1 0 400px;
+    max-width: 350px;
+    min-width: 250px;
+}
+
+.experience .picture {
+    width: 110px;
+    height: 100%;
+    background-color: #A4161A;
+}
+
+.hero,
+.about,
+.proyects,
+.experience {
+    margin-bottom: 10rem;
 }

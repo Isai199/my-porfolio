@@ -53,6 +53,7 @@
 .popup ul li {
     display: flex;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .popup ul li span:nth-child(1) {
@@ -63,10 +64,14 @@
     flex: 2;
 }
 
+.popup p {
+    margin-bottom: 10px;
+}
+
 /* TODO: Ajustar una imagen, y que sea responsive */
 .picture {
-    width: 500px;
-    height: 500px;
+    width: 100px;
+    height: 100px;
     background-color: var(--red-muted);
     min-width: inherit;
 }
