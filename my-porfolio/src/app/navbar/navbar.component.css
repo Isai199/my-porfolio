@@ -12,3 +12,11 @@ nav div {
     padding: 15px;
     font-size: 1.125rem;
 }
+
+.navbar-links.active {
+    display: flex;
+}
+
+.navbar-links {
+    display: none;
+}
