@@ -1,8 +1,7 @@
-/* TODO: Definir navbar para moviles */
-
 nav {
     background-color: var(--dark-muted);
     color: var(--white);
+    position: relative;
 }
 
 nav div {
