@@ -34,6 +34,28 @@ body {
     font-size: 18px;
     line-height: 1.6;
     min-width: 360px;
+    /* NOTE: estas configuraciones de scrollbar, son para el navegador firefox */
+    /* scrollbar-width: thin; 
+    scrollbar-color: var(--grey-muted) var(--grey-light); */
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--grey-light);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--grey);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--grey-muted);
 }
 
 p,

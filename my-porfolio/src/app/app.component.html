@@ -29,8 +29,9 @@
 </section>
 
 <section class="proyects mx-auto max-w-8x1 text-center">
-    <h2 class="uppercase">proyects</h2>
+    <h2 class="uppercase">projects</h2>
 
+    <!-- TODO: APlicar mediante codigo un slider, que en web se mantenga en 3 items(por defecto), pero mediante la reduccion de la pantalla, esta redusca los items en 1 -->
     <ul>
         <li>
             <article>
@@ -47,6 +48,57 @@
                     </div>
                     <!-- TODO: buscar un mejor icono de la flecha o arreglarlo con css -->
                     <!-- NOTE: Aqui encontre con codigo: https://www.toptal.com/designers/htmlarrows/arrows/ -->
+                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
+                </div>
+            </article>
+        </li>
+        <li>
+            <article>
+                <div class="picture"></div>
+                <div>
+                    <div class="text-left">
+                        <p><strong>Pryect's name</strong>
+                        </p>
+                        <span class="text-grey-muted">
+                            <small>
+                                A little description
+                            </small>
+                        </span>
+                    </div>
+                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
+                </div>
+            </article>
+        </li>
+        <li>
+            <article>
+                <div class="picture"></div>
+                <div>
+                    <div class="text-left">
+                        <p><strong>Pryect's name</strong>
+                        </p>
+                        <span class="text-grey-muted">
+                            <small>
+                                A little description
+                            </small>
+                        </span>
+                    </div>
+                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
+                </div>
+            </article>
+        </li>
+        <li>
+            <article>
+                <div class="picture"></div>
+                <div>
+                    <div class="text-left">
+                        <p><strong>Pryect's name</strong>
+                        </p>
+                        <span class="text-grey-muted">
+                            <small>
+                                A little description
+                            </small>
+                        </span>
+                    </div>
                     <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
                 </div>
             </article>

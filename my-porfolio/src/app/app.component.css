@@ -80,8 +80,18 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
     height: 150px;
 }
 
+.proyects {
+    overflow: auto; /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
+}
+
 .proyects article {
     padding: 1.2rem;
+}
+
+.proyects ul {
+    overflow: overlay; /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
+    max-width: 1150px;
+    column-gap: 15px;
 }
 
 .proyects ul li {
