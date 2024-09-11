@@ -1,16 +1,17 @@
-import { Component, Injector } from '@angular/core';
+import { Component, HostListener, Injector } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { createCustomElement } from "@angular/elements";
 import { PopupComponent } from "./popup/popup.component";
 import { PopupService } from "./popup.service";
 import { FooterComponent } from "./footer/footer.component";
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   providers: [PopupService],
-  imports: [RouterOutlet, PopupComponent, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, PopupComponent, NavbarComponent, FooterComponent, NgFor, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -32,6 +33,27 @@ export class AppComponent {
     },
   ];
 
+
+  projects = [
+    {
+      name: 'Pryect\'s name',
+      description: 'A little description'
+    },
+    {
+      name: '',
+      description: ''
+    },
+    {
+      name: '',
+      description: ''
+    },
+  ];
+
+  currentIndex = 0;
+  visibleProjects = 3;
+  intervalId: any;
+  numDots = 0;
+
   // TODO: Analizar este codigo, para ver si se quita o se queda, de momento muestra el modal o popup.
   constructor(
     injector: Injector,
@@ -40,5 +62,59 @@ export class AppComponent {
     const PopupElement = createCustomElement(PopupComponent, {injector});
 
     //customElements.define('popup-element', PopupElement);
+  }
+
+  ngOnInit() {
+    this.updateVisibleProjects();
+    this.startAutoSlide();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.updateVisibleProjects();
+  }
+
+  // TODO: Al cambiar de tamano de la pantalla, no siempre vuelve a mostrar todos los proyectos.
+  updateVisibleProjects() {
+    const width = window.innerWidth;
+    if (width < 600) {
+      this.visibleProjects = 1;
+    } else if(width >= 600 && width < 900) {
+      this.visibleProjects = 2;
+    } else {
+      this.visibleProjects = 3;
+    }
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
+  startAutoSlide() {
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+    }, 3000);
+  }
+
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + this.visibleProjects) % this.projects.length;
+  }
+
+  previousSlide() {
+    this.currentIndex = (this.currentIndex - this.visibleProjects + this.projects.length) % this.projects.length;
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex = index * this.visibleProjects;
+  }
+
+  getDotCount(): number {
+    this.numDots = Math.floor(this.currentIndex / this.visibleProjects);
+    return Math.ceil(this.projects.length / this.visibleProjects);
+  }
+
+  generateDotArray(): number[] {
+    let newArray = Array(this.getDotCount());
+    return newArray;
   }
 }

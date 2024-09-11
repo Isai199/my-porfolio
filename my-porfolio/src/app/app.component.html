@@ -32,17 +32,17 @@
     <h2 class="uppercase">projects</h2>
 
     <!-- TODO: APlicar mediante codigo un slider, que en web se mantenga en 3 items(por defecto), pero mediante la reduccion de la pantalla, esta redusca los items en 1 -->
-    <ul>
-        <li>
+    <ul class="slider">
+        <li *ngFor="let project of projects.slice(currentIndex, currentIndex + visibleProjects)">
             <article>
                 <div class="picture"></div>
                 <div>
-                    <div class="text-left">
-                        <p><strong>Pryect's name</strong>
+                    <div class="text-left overflow-hidden">
+                        <p><strong>{{ project.name }}</strong>
                         </p>
                         <span class="text-grey-muted">
                             <small>
-                                A little description
+                                {{ project.description }}
                             </small>
                         </span>
                     </div>
@@ -52,57 +52,16 @@
                 </div>
             </article>
         </li>
-        <li>
-            <article>
-                <div class="picture"></div>
-                <div>
-                    <div class="text-left">
-                        <p><strong>Pryect's name</strong>
-                        </p>
-                        <span class="text-grey-muted">
-                            <small>
-                                A little description
-                            </small>
-                        </span>
-                    </div>
-                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
-                </div>
-            </article>
-        </li>
-        <li>
-            <article>
-                <div class="picture"></div>
-                <div>
-                    <div class="text-left">
-                        <p><strong>Pryect's name</strong>
-                        </p>
-                        <span class="text-grey-muted">
-                            <small>
-                                A little description
-                            </small>
-                        </span>
-                    </div>
-                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
-                </div>
-            </article>
-        </li>
-        <li>
-            <article>
-                <div class="picture"></div>
-                <div>
-                    <div class="text-left">
-                        <p><strong>Pryect's name</strong>
-                        </p>
-                        <span class="text-grey-muted">
-                            <small>
-                                A little description
-                            </small>
-                        </span>
-                    </div>
-                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
-                </div>
-            </article>
-        </li>
+        <!-- TOODO: Esconder los botones, en pantallas chicas -->
+        <button class="arrow left" (click)="previousSlide()">&#10094;</button>
+        <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+
+        <div class="dots">
+            <span *ngFor="let i of generateDotArray(); let idx = index"
+                class="dot"
+                [class.active]="idx === numDots"
+                (click)="goToSlide(idx)"></span>
+        </div>
     </ul>
 </section>
 <section class="experience mx-auto max-w-8x1 text-center">

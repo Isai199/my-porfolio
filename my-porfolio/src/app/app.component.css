@@ -80,18 +80,55 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
     height: 150px;
 }
 
+/* TODO: hacer que el texto no agrande los recuadros, en la descripcion de los proyectos*/
 .proyects {
-    overflow: auto; /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
+    overflow: hidden; /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
 }
 
 .proyects article {
     padding: 1.2rem;
 }
 
-.proyects ul {
-    overflow: overlay; /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
+.slider {
+     /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
     max-width: 1150px;
     column-gap: 15px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.left {
+    left: -40px;
+}
+
+.right {
+    right: -40px;
+}
+
+.dots {
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 10px);
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
 }
 
 .proyects ul li {
@@ -105,7 +142,7 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
     margin-top: 10px;
 }
 
-.proyects button {
+.proyects button:not(.arrow) {
     border-radius: 50%;
     line-height: 1;
     font-size: 1.7rem;

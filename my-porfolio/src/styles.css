@@ -187,4 +187,8 @@ button:active {
     color: var(--grey-muted);
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 /* TODO: Darle margen a los h1,h2,h3 y demas textos, y secciones */
