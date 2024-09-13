@@ -21,9 +21,8 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
 }
 
 .hero .profile-pic {
-    background-color: var(--red-light);
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     margin-bottom: 2rem;
 }
@@ -144,6 +143,7 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
 
 .proyects button:not(.arrow) {
     border-radius: 50%;
+    padding: 0.4rem;
     line-height: 1;
     font-size: 1.7rem;
     font-family: inherit;
