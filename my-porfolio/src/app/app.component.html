@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <section class="hero text-center mx-auto max-w-8xl">
     <!-- TODO: Colocar mi foto de perfil y una animacion -->
-    <img class="profile-pic" src="perfil.png" alt="icon">
+    <img class="profile-pic" src="profile.png" alt="icon">
     <h1 class="uppercase">
         Isai Gómez
     </h1>
@@ -17,7 +17,8 @@
 <section class="about mx-auto max-w-8xl text-center">
     <div class="wrapper">
         <h2 class="uppercase">About us</h2>
-        <div class="profile-pic"></div> <!--TODO: poner una foto mia aqui-->
+        <!-- TODO: Buscar una imagen que no se pixelee o arreglar esta -->
+        <img src="isai-leon.png" class="profile-pic" alt="Isai in Leon" width="150px" height="250px">
         <p class="text-justify">Hi, I'm Isai. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         <button>
           <span>
@@ -34,7 +35,7 @@
     <ul class="slider">
         <li *ngFor="let project of projects.slice(currentIndex, currentIndex + visibleProjects)">
             <article>
-                <div class="picture"></div>
+                <img src="{{ project.image }}" alt="hero de emkode" width="400px" height="200px">
                 <div>
                     <div class="text-left overflow-hidden">
                         <p><strong>{{ project.name }}</strong>
@@ -66,9 +67,10 @@
 <section class="experience mx-auto max-w-8x1 text-center">
     <h2 class="uppercase">My work experience</h2>
 
+    <!-- TODO: Agregar mas espaciado con css -->
     <ul>
         <li>
-            <div class="picture"></div>
+            <div class="emkode-logo"></div>
             <div class="text-left">
                 <h3>emkode</h3>
                 <p>Full-stack developer</p>
@@ -79,7 +81,7 @@
             </div>
         </li>
         <li>
-            <div class="picture"></div>
+            <div class="cao-logo"></div>
             <div class="text-left">
                 <h3>cao</h3>
                 <p>Full-stack developer</p>

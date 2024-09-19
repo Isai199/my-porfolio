@@ -37,16 +37,29 @@ export class AppComponent {
   projects = [
     {
       name: 'Pryect\'s name',
-      description: 'A little description'
+      description: 'A little description',
+      image: 'emkode/hero.png'
     },
     {
-      name: '',
-      description: ''
+      name: 'work report',
+      description: 'A little description',
+      image: 'reporte-de-obra/reporte-obra-menu.png'
     },
     {
-      name: '',
-      description: ''
+      name: 'xml',
+      description: 'A little description',
+      image: 'xml/xml-menu.png'
     },
+    // {
+    //   name: 'segared administration',
+    //   description: '',
+    //   image: 'segared/tabla-usuarios.png'
+    // },
+    // {
+    //   name: 'refactoring',
+    //   description: '',
+    //   image: 'refactorizar-codigo/lista-empleados.png'
+    // },
   ];
 
   currentIndex = 0;
@@ -90,6 +103,7 @@ export class AppComponent {
     clearInterval(this.intervalId);
   }
 
+  // TODO: arrglar el bug, de que se muestran de manera aleatoria los items o proyectos
   startAutoSlide() {
     this.intervalId = setInterval(() => {
       this.nextSlide();
