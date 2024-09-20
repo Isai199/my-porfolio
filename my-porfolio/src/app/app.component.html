@@ -31,7 +31,7 @@
 <section class="proyects mx-auto max-w-8x1 text-center">
     <h2 class="uppercase">projects</h2>
 
-    <!-- TODO: APlicar mediante codigo un slider, que en web se mantenga en 3 items(por defecto), pero mediante la reduccion de la pantalla, esta redusca los items en 1 -->
+    <!-- TODO: arreglar que los proyectos no se muestran completos al reducir la pantalla, y que hay desbordamiento -->
     <ul class="slider">
         <li *ngFor="let project of projects.slice(currentIndex, currentIndex + visibleProjects)">
             <article>
@@ -46,9 +46,10 @@
                             </small>
                         </span>
                     </div>
+                    <!-- TODO: Buscar la forma de que el metodo acepte JSONS -->
                     <!-- TODO: buscar un mejor icono de la flecha o arreglarlo con css -->
                     <!-- NOTE: Aqui encontre con codigo: https://www.toptal.com/designers/htmlarrows/arrows/ -->
-                    <button type="button" (click)="popup.showAsComponent(input.value)">&#10132;</button>
+                    <button type="button" (click)="popup.showAsComponent(project.allurls)">&#10132;</button>
                 </div>
             </article>
         </li>
@@ -67,7 +68,7 @@
 <section class="experience mx-auto max-w-8x1 text-center">
     <h2 class="uppercase">My work experience</h2>
 
-    <!-- TODO: Agregar mas espaciado con css -->
+    <!-- TODO: Agregar un limite a los costados, ya que al agregar mas items ocupan todo el ancho de la pantalla -->
     <ul>
         <li>
             <div class="emkode-logo"></div>
@@ -96,7 +97,7 @@
 
 <!-- TODO: implemetar esto para los modales -->
 <!-- TODO: Analizar si show as element se elimina o se queda, y hacer lo debido con ello -->
-<input #input value="Message" />
+<input #input value="Este es mi mensaje" />
 <button type="button" (click)="popup.showAsComponent(input.value)">Show as component</button>
 <button type="button" (click)="popup.showAsElement(input.value)">Show as element</button>
 <app-footer></app-footer>

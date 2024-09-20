@@ -75,17 +75,19 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
     overflow: hidden; /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
 }
 
-.proyects article {
-    padding: 1.2rem;
+.proyects article div:nth-child(2) {
+    padding: 0 1rem 1rem 1rem;
 }
 
 .slider {
-     /* TODO: ver si, despues de la aplicacion del slider mediante codigo, se sigue ocupando esto */
-    max-width: 1150px;
     column-gap: 15px;
     position: relative;
     margin-bottom: 30px;
 }
+
+/* .slider article {
+    width: auto;
+} */
 
 .arrow {
     position: absolute;
@@ -151,27 +153,29 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
 .experience li {
     border: 1px solid var(--grey-muted);
     display: flex;
-    gap: 20px;
-    padding: 10px;
+    gap: 30px;
+    padding: 12px 15px;
     border-radius: 10px;
-    flex: 1 0 400px;
-    max-width: 350px;
-    min-width: 250px;
+    flex: 1 0 300px;
+    max-width: 400px;
 }
 
 .cao-logo {
     background-image: url(../../public/cao.jpg);
-    width: 150px;
-    height: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin-top: 6px;
 }
 
 .emkode-logo {
     background-image: url(../../public/logo_emkode.png);
-    width: 150px;
+    margin-top: 50px;/* NOTE: solo use esto para centrar */
+}
+
+.emkode-logo,
+.cao-logo {
+    width: 100px;
+    max-width: 150px;
+    min-width: 105px;
     height: auto;
-    margin-top: 60px;/* NOTE: solo use esto para centrar */
     background-size: contain;
     background-repeat: no-repeat;
 }

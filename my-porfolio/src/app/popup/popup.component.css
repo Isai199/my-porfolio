@@ -11,6 +11,7 @@
     font-size: 24px;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 
 .popup {
@@ -69,10 +70,10 @@
 }
 
 /* TODO: Ajustar una imagen, y que sea responsive */
-.picture {
+/* .picture {
     width: 100px;
     height: 100px;
     background-color: var(--red-muted);
     min-width: inherit;
-}
+} */
 

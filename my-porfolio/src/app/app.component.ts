@@ -38,17 +38,20 @@ export class AppComponent {
     {
       name: 'Pryect\'s name',
       description: 'A little description',
-      image: 'emkode/hero.png'
+      image: 'emkode/hero.png',
+      allurls: 'emkode/hero.png'
     },
     {
       name: 'work report',
       description: 'A little description',
-      image: 'reporte-de-obra/reporte-obra-menu.png'
+      image: 'reporte-de-obra/reporte-obra-menu.png',
+      allurls: 'reporte-de-obra/reporte-obra-adjuntar-archivo.png'
     },
     {
       name: 'xml',
       description: 'A little description',
-      image: 'xml/xml-menu.png'
+      image: 'xml/xml-menu.png',
+      allurls: 'xml/xml-menu.png'
     },
     // {
     //   name: 'segared administration',
