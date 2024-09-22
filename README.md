@@ -40,3 +40,6 @@
 - [Proyectos](https://preview.themeforest.net/item/jenna-angular-personal-portfolio-template/full_screen_preview/47147901?_ga=2.264658631.911828075.1720756958-1622826640.1720756958)
 
 -[ejemplos de proyectos](https://platzi.com/blog/amb-ejemplos-portafolios-web/)
+
+### Ejercicios de referencia
+-[Slider](https://stackblitz.com/edit/rux5xg?file=src%2Fapp%2Fslider%2Fslider.component.ts)
