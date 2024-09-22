@@ -15,10 +15,8 @@
 }
 
 .popup {
-    border: 1px solid var(--white);
     background-color: var(--grey-light);
     position: relative;
-    padding: 30px;
     font-size: 1.4rem;
     line-height: 1.5;
 }
@@ -45,6 +43,7 @@
     min-width: 277px;
     max-width: 550px;
     flex: 1;
+    margin: 1rem 2rem 1rem 0;
 }
 
 .popup ul {
@@ -67,6 +66,12 @@
 
 .popup p {
     margin-bottom: 10px;
+}
+
+.container {
+    background-color: var(--dark-muted);
+    display: flex;
+    align-items: center;
 }
 
 /* TODO: Ajustar una imagen, y que sea responsive */

@@ -1,7 +1,7 @@
 
 /* TODO: definir bien los colores del hover, para amntener consistencia */
 /* TODO: definir el espaciado que tendra el sitio, a los costados en mobile */
-h2 { /*TODO: checar si esto no afecta a los demas componentes*/
+h2 { 
     margin-bottom: 3rem;
 }
 
@@ -85,9 +85,9 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
     margin-bottom: 30px;
 }
 
-/* .slider article {
+.slider article {
     width: auto;
-} */
+}
 
 .arrow {
     position: absolute;
@@ -125,6 +125,7 @@ h2 { /*TODO: checar si esto no afecta a los demas componentes*/
 
 .proyects ul li {
     border: 1px solid var(--grey-muted);
+    border-radius: 1rem;
 }
 
 .proyects article div:nth-child(2) {
