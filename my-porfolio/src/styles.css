@@ -20,11 +20,18 @@
     box-sizing: border-box;
 }
 
+/* TODO: Ver o evaluar si es necesario, comprobar derechos de autor para estas funtes de google fonts */
+@font-face {
+    font-family: 'PTSans Manrope';
+    src: url(../public/assets/fonts/PTSans-Regular.ttf),url(../public/assets/fonts/Manrope-VariableFont_wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    font-family: 'PTSans Manrope',"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol";
-    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--dark);
