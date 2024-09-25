@@ -38,37 +38,37 @@ export class AppComponent {
     {
       name: 'Pryect\'s name',
       description: 'A little description',
-      image: 'emkode/hero.png',
+      image: 'emkode/hero-slider.png',
       allurls: 'emkode/hero.png'
     },
     {
       name: 'work report',
       description: 'A little description',
-      image: 'reporte-de-obra/reporte-obra-menu.png',
+      image: 'reporte-de-obra/reporte-obra-menu-slider.png',
       allurls: 'reporte-de-obra/reporte-obra-adjuntar-archivo.png'
     },
     {
       name: 'xml',
       description: 'A little description',
-      image: 'xml/xml-menu.png',
+      image: 'xml/xml-menu-slider.png',
       allurls: 'xml/xml-menu.png'
     },
     {
       name: 'segared administration',
       description: 'A little description',
-      image: 'segared/tabla-usuarios.png',
+      image: 'segared/tabla-usuarios-slider.png',
       allurls: 'segared/tabla-usuarios.png'
     },
     {
       name: 'refactoring',
       description: 'A little description',
-      image: 'refactorizar-codigo/lista-empleados.png',
+      image: 'refactorizar-codigo/lista-empleados-slider.png',
       allurls: 'segared/tabla-usuarios.png'
     },
     {
       name: 'refactoring',
       description: 'A little description',
-      image: 'refactorizar-codigo/lista-empleados.png',
+      image: 'refactorizar-codigo/lista-empleados-slider.png',
       allurls: 'segared/tabla-usuarios.png'
     },
   ];
@@ -85,8 +85,9 @@ export class AppComponent {
     injector: Injector,
     public popup: PopupService
   ) {
-    const PopupElement = createCustomElement(PopupComponent, {injector});
+    //const PopupElement = createCustomElement(PopupComponent, {injector});
 
+    // NOTE: Esto me genera un error, ya que customElements no esta definida
     //customElements.define('popup-element', PopupElement);
   }
 

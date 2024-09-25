@@ -31,14 +31,15 @@ export class PopupService {
     document.body.appendChild(popup);
   }
 
-  showAsElement(message: string) {
-    const popupEl: NgElement & WithProperties<PopupComponent> = document.createElement('popup-element') as any;
+  // NOTE: Esto igual genera un popup pero como un elemtno html(Igual hace falta revisar bien como funciona esto)
+  // showAsElement(message: string) {
+  //   const popupEl: NgElement & WithProperties<PopupComponent> = document.createElement('popup-element') as any;
 
-    popupEl.addEventListener('closed', () => document.body.removeChild(popupEl));
+  //   popupEl.addEventListener('closed', () => document.body.removeChild(popupEl));
 
-    popupEl.message = message;
+  //   popupEl.message = message;
 
-    document.body.appendChild(popupEl);
-  }
+  //   document.body.appendChild(popupEl);
+  // }
   
 }

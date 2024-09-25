@@ -34,7 +34,7 @@ body {
         "Segoe UI Symbol";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--dark);
+    color: var(--dark-muted);
     background-color: var(--grey-light);
     margin: 0;
     font-size: 18px;
