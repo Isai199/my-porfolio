@@ -17,8 +17,6 @@
 <section class="about mx-auto max-w-8xl text-center">
     <div class="wrapper">
         <h2 class="uppercase">About us</h2>
-        <!-- TODO: Buscar una imagen que no se pixelee o arreglar esta -->
-        <!-- FIXME: Angular me tira un error de advertencia sobre el tamano de esta imagen -->
         <img src="isai-leon.jpg" class="profile-pic" alt="Isai in Leon" width="180" height="300"/>
         <p class="text-justify">Hi, I'm Isai. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         <button>
@@ -32,7 +30,7 @@
 <section class="proyects mx-auto max-w-8x1 text-center">
     <h2 class="uppercase">projects</h2>
 
-    <!-- TODO: arreglar que los proyectos no se muestran completos al reducir la pantalla, y que hay desbordamiento -->
+    <!-- TODO: En algunos puntos de pantalla hay desbordamiento y se muestran tre proyectos en lugar de dos pro ejemplo -->
     <ul class="slider">
         <li class="overflow-hidden" *ngFor="let project of projects.slice(currentIndex, currentIndex + visibleProjects)">
             <article>
@@ -47,7 +45,6 @@
                             </small>
                         </span>
                     </div>
-                    <!-- TODO: Buscar la forma de que el metodo acepte JSONS -->
                     <!-- TODO: buscar un mejor icono de la flecha o arreglarlo con css -->
                     <!-- NOTE: Aqui encontre con codigo: https://www.toptal.com/designers/htmlarrows/arrows/ -->
                     <button type="button" (click)="popup.showAsComponent(project.allurls)">&#10132;</button>

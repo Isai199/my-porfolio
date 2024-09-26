@@ -10,6 +10,8 @@
     border-top: 1px solid black;
     font-size: 18px;
     justify-content: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
     color: var(--grey-muted);
     align-items: center;
     z-index: 3;
@@ -56,11 +58,16 @@ article {
     justify-content: center;
 }
 
+a:hover {
+    border-bottom: 1px solid var(--grey-muted);
+}
+
 .popup {
     background-color: var(--grey-light);
     position: relative;
     font-size: 1.4rem;
     line-height: 1.5;
+    margin: 250px 5% 10% 5%;
 }
 
 .popup div:nth-child(1) {
@@ -80,7 +87,7 @@ article {
 }
 
 .popup ul li span:nth-child(2) {
-    flex: 3;
+    flex: 2.2;
 }
 
 .container {

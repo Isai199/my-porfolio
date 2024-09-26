@@ -1,5 +1,6 @@
 import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { Project } from '../project';
 
 @Component({
   selector: 'app-popup',
@@ -21,16 +22,16 @@ export class PopupComponent {
   state: 'opened' | 'closed' = 'closed';
 
   @Input()
-  get message(): string {
+  get message(): Project {
     return this._message;
   }
 
-  set message(message: string) {
+  set message(message: Project) {
     this._message = message;
     this.state = 'opened';
   }
 
-  private _message = '';
+  private _message: any = {};
 
   @Output()
   closed = new EventEmitter<void>();

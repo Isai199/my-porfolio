@@ -1,6 +1,7 @@
 import { ApplicationRef, createComponent, EnvironmentInjector, Injectable } from '@angular/core';
 import {NgElement, WithProperties} from '@angular/elements';
 import { PopupComponent } from "./popup/popup.component";
+import { Project } from './project';
 
 @Injectable()
 export class PopupService {
@@ -11,7 +12,7 @@ export class PopupService {
   ) {}
 
   // antes de agregar al dom, se define la estructra del popup
-  showAsComponent(message: string) {
+  showAsComponent(message: Project) {
     const popup = document.createElement('popup-component');
 
     const popupComponentRef = createComponent(PopupComponent, {

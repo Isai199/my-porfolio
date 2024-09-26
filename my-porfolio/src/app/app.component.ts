@@ -6,6 +6,7 @@ import { PopupComponent } from "./popup/popup.component";
 import { PopupService } from "./popup.service";
 import { FooterComponent } from "./footer/footer.component";
 import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { Project } from './project';
 
 @Component({
   selector: 'app-root',
@@ -39,37 +40,100 @@ export class AppComponent {
       name: 'Pryect\'s name',
       description: 'A little description',
       image: 'emkode/hero-slider.png',
-      allurls: 'emkode/hero.png'
+      allurls: {
+        title: 'Web site for Emkode',
+        description: '',
+        properties: {
+          type: 'website',
+          lenguage: 'html, css, js',
+          tools: 'vsc, github',
+          country: 'mexico',
+          company: 'emkode',
+          liveUrl: 'https://www.emkode.com/?fbclid=IwY2xjawEaVEFleHRuA2FlbQIxMAABHambvVjFv9CPYU8yucI5PsCghc8stN9FyZvuSYpaAD7cxuDj9piQVO9RfA_aem_WCADCyySlCOLKyfBFdsvSA'
+
+        },
+        imageUrl: 'emkode/hero.png',
+      }
     },
     {
-      name: 'work report',
+      name: 'work report module',
       description: 'A little description',
       image: 'reporte-de-obra/reporte-obra-menu-slider.png',
-      allurls: 'reporte-de-obra/reporte-obra-adjuntar-archivo.png'
+      allurls: {
+        title: 'work report',
+        description: '',
+        properties: {
+          type: '',
+          lenguage: '',
+          tools: '',
+          country: ''
+        },
+        imageUrl: 'reporte-de-obra/reporte-obra-adjuntar-archivo.png',
+      }
     },
     {
       name: 'xml',
       description: 'A little description',
       image: 'xml/xml-menu-slider.png',
-      allurls: 'xml/xml-menu.png'
+      allurls: {
+        title: 'xml module',
+        description: '',
+        properties: {
+          type: '',
+          lenguage: '',
+          tools: '',
+          country: ''
+        },
+        imageUrl: 'xml/xml-menu.png',
+      }
     },
     {
       name: 'segared administration',
       description: 'A little description',
       image: 'segared/tabla-usuarios-slider.png',
-      allurls: 'segared/tabla-usuarios.png'
+      allurls: {
+        title: 'segared administration crud',
+        description: '',
+        properties: {
+          type: '',
+          lenguage: '',
+          tools: '',
+          country: ''
+        },
+        imageUrl: 'segared/tabla-usuarios.png',
+      }
     },
     {
       name: 'refactoring',
       description: 'A little description',
       image: 'refactorizar-codigo/lista-empleados-slider.png',
-      allurls: 'segared/tabla-usuarios.png'
+      allurls: {
+        title: 'refactoring old code',
+        description: '',
+        properties: {
+          type: '',
+          lenguage: '',
+          tools: '',
+          country: ''
+        },
+        imageUrl: 'refactorizar-codigo/lista-empleados-slider.png',
+      }
     },
     {
       name: 'refactoring',
       description: 'A little description',
       image: 'refactorizar-codigo/lista-empleados-slider.png',
-      allurls: 'segared/tabla-usuarios.png'
+      allurls: {
+        title: 'refactoring old code',
+        description: '',
+        properties: {
+          type: '',
+          lenguage: '',
+          tools: '',
+          country: ''
+        },
+        imageUrl: 'refactorizar-codigo/lista-empleados-slider.png',
+      }
     },
   ];
 
@@ -93,7 +157,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.updateVisibleProjects();
-    // this.startAutoSlide();
+    //this.startAutoSlide();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -160,5 +224,5 @@ interface Projects {
   name: string,
   description: string,
   image: string,
-  allurls: string
+  allurls: Project
 }
