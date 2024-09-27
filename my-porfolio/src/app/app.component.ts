@@ -1,7 +1,6 @@
 import { Component, HostListener, Injector } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-import { createCustomElement } from "@angular/elements";
 import { PopupComponent } from "./popup/popup.component";
 import { PopupService } from "./popup.service";
 import { FooterComponent } from "./footer/footer.component";
@@ -145,15 +144,7 @@ export class AppComponent {
   numDots = 0;
 
   // TODO: Analizar este codigo, para ver si se quita o se queda, de momento muestra el modal o popup.
-  constructor(
-    injector: Injector,
-    public popup: PopupService
-  ) {
-    //const PopupElement = createCustomElement(PopupComponent, {injector});
-
-    // NOTE: Esto me genera un error, ya que customElements no esta definida
-    //customElements.define('popup-element', PopupElement);
-  }
+  constructor(public popup: PopupService) {}
 
   ngOnInit() {
     this.updateVisibleProjects();

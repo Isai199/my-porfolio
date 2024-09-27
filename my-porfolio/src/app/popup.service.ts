@@ -1,5 +1,4 @@
-import { ApplicationRef, createComponent, EnvironmentInjector, Injectable } from '@angular/core';
-import {NgElement, WithProperties} from '@angular/elements';
+import { ApplicationRef, createComponent, EnvironmentInjector, Injectable, ChangeDetectorRef  } from '@angular/core';
 import { PopupComponent } from "./popup/popup.component";
 import { Project } from './project';
 
@@ -30,17 +29,9 @@ export class PopupService {
     popupComponentRef.instance.message = message;
 
     document.body.appendChild(popup);
+
+    // NOTE: Angular solo detecta cambios en ciertos eventos como al hacer click, 
+    // es por eso que aqui estoy obligado a angular a detectar un cambio(que es el mensaje)
+    popupComponentRef.injector.get(ChangeDetectorRef).detectChanges();
   }
-
-  // NOTE: Esto igual genera un popup pero como un elemtno html(Igual hace falta revisar bien como funciona esto)
-  // showAsElement(message: string) {
-  //   const popupEl: NgElement & WithProperties<PopupComponent> = document.createElement('popup-element') as any;
-
-  //   popupEl.addEventListener('closed', () => document.body.removeChild(popupEl));
-
-  //   popupEl.message = message;
-
-  //   document.body.appendChild(popupEl);
-  // }
-  
 }
