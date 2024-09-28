@@ -70,15 +70,11 @@ a:hover {
     margin: 250px 5% 10% 5%;
 }
 
-.popup div:nth-child(1) {
-    flex: 1.3;
-}
-
 .popup div:nth-child(2) {
     min-width: 277px;
     max-width: 550px;
     flex: 1;
-    margin: 1rem 2rem 1rem 0;
+    margin: 1rem 2rem 1rem 1rem;
 }
 
 
@@ -94,6 +90,10 @@ a:hover {
     background-color: var(--dark-muted);
     display: flex;
     align-items: center;
+    max-width: 900px;
+    min-width: 300px;
+    max-height: 500px;
+    flex: 1.3 1 620px;
 }
 
 /* TODO: Ajustar una imagen, y que sea responsive */
