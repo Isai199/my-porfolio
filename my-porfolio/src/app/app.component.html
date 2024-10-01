@@ -31,13 +31,14 @@
     <h2 class="uppercase">projects</h2>
 
     <!-- TODO: En algunos puntos de pantalla hay desbordamiento y se muestran tre proyectos en lugar de dos pro ejemplo -->
-    <ul class="slider">
-        <li class="overflow-hidden" *ngFor="let project of projects.slice(currentIndex, currentIndex + visibleProjects)">
+    <ul class="slider" appSlider [items]="projects">
+        <!-- <li class="overflow-hidden" *ngFor="let project of projects.slice(currentIndex, currentIndex + visibleProjects)"> -->
+        <li class="overflow-hidden" *ngFor="let project of projects">
             <article>
-                <img src="{{ project.image }}" alt="hero de emkode" [width]="imageWidth" [height]="imageHeight" priority>
+                <img [src]="project.image" alt="hero de emkode" [width]="imageWidth" [height]="imageHeight" priority>
                 <div>
                     <div class="text-left overflow-hidden">
-                        <p><strong>{{ project.name }}</strong>
+                        <p><strong >{{ project.name }}</strong>
                         </p>
                         <span class="text-grey-muted">
                             <small>
@@ -52,15 +53,15 @@
             </article>
         </li>
         <!-- TOODO: Esconder los botones, en pantallas chicas -->
-        <button class="arrow left" (click)="previousSlide()">&#10094;</button>
-        <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+        <button class="arrow left prev-btn">&#10094;</button>
+        <button class="arrow right next-btn">&#10095;</button>
 
-        <div class="dots">
+        <!-- <div class="dots">
             <span *ngFor="let i of generateDotArray(); let idx = index"
                 class="dot"
                 [class.active]="idx === numDots"
                 (click)="goToSlide(idx)"></span>
-        </div>
+        </div> -->
     </ul>
 </section>
 <section class="experience mx-auto max-w-8x1 text-center">

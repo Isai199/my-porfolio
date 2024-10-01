@@ -44,3 +44,4 @@
 ### Ejercicios de referencia
 -[Slider](https://stackblitz.com/edit/rux5xg?file=src%2Fapp%2Fslider%2Fslider.component.ts)
 -[Custom elements](https://stackblitz.com/edit/4ahddr?file=src%2Fmain.ts)
+-[slider using a directive](https://stackblitz.com/edit/ds2yce?file=src%2Fapp%2Fslider.directive.ts,src%2Fmain.ts,src%2Fstyles.css)
