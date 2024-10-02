@@ -9,5 +9,5 @@ export interface Project {
         company?: string,
         liveUrl?: string
     },
-    imageUrl: string
+    imagesUrl: string[]
 }

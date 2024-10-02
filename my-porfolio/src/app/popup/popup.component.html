@@ -1,11 +1,16 @@
 <div class="popup">
     <!-- TODO: Hacer que el icon de cruz sea concruente con el de la fleha o con el sitio en general -->
-    <button type="button" (click)="closed.next()">✖</button>
+    <button type="button" class="btn-close" (click)="closed.next()">✖</button>
   <article>
     <!-- TODO: Hacer que las imagenes, se renderizen mas rapido -->
-    <div class="container">
-      <img src="{{ message.imageUrl }}" alt="imagen de mi trabajo"  width="100%" height="100%">
-    </div>
+    <!-- TODO: Reeajustar las imagenes, ya que ahora varias de ellas no tiene el tamano adecuado(editar de una en una, relativas en medidas a hero.png) -->
+    <ul class="container" appSlider [items]="message.imagesUrl" [visibleItems]="1">
+      <li *ngFor="let image of message.imagesUrl">
+        <img src="{{ image }}" alt="imagen de mi trabajo"  width="100%" height="100%">
+      </li>
+      <button class="arrow left prev-btn">&#10094;</button>
+      <button class="arrow right next-btn">&#10095;</button>
+    </ul>
     <div>
       <h3>{{ message.title }}</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p> 
@@ -30,7 +35,7 @@
         </li>
         <li>
           <span>Live url:</span>
-          <!-- TODO: proner un condicional, para los que no tienen pagina -->
+          <!-- TODO: proner un condicional, para los que no tienen pagina o reedireccionar al codigo github -->
           <span>
             <a type="link" [href]="message.properties.liveUrl" target="_blank">www.{{ message.properties.company }}.com</a>
           </span>

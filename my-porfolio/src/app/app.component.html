@@ -31,7 +31,7 @@
     <h2 class="uppercase">projects</h2>
 
     <!-- TODO: En algunos puntos de pantalla hay desbordamiento y se muestran tre proyectos en lugar de dos pro ejemplo -->
-    <ul class="slider" appSlider [items]="projects" [visibleItems]="visibleProjects">
+    <ul class="slider" appSlider [items]="projects" [visibleItems]="visibleProjects" [isDotAvailable]="true">
         <li class="overflow-hidden" *ngFor="let project of projects">
             <article>
                 <img [src]="project.image" alt="hero de emkode" [width]="imageWidth" [height]="imageHeight" priority>
@@ -51,7 +51,6 @@
                 </div>
             </article>
         </li>
-        <!-- TOODO: Esconder los botones, en pantallas chicas -->
         <button class="arrow left prev-btn">&#10094;</button>
         <button class="arrow right next-btn">&#10095;</button>
 

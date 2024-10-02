@@ -51,9 +51,15 @@ export class AppComponent {
           country: 'mexico',
           company: 'emkode',
           liveUrl: 'https://www.emkode.com/?fbclid=IwY2xjawEaVEFleHRuA2FlbQIxMAABHambvVjFv9CPYU8yucI5PsCghc8stN9FyZvuSYpaAD7cxuDj9piQVO9RfA_aem_WCADCyySlCOLKyfBFdsvSA'
-
         },
-        imageUrl: 'emkode/hero.png',
+        imagesUrl: [
+          'emkode/hero.png',
+          'emkode/contact.png',
+          'emkode/footer.png',
+          'emkode/hero-slider.png',
+          'emkode/ideas.png',
+          'emkode/tecnologias.png',
+        ],
       }
     },
     {
@@ -69,7 +75,15 @@ export class AppComponent {
           tools: '',
           country: ''
         },
-        imageUrl: 'reporte-de-obra/reporte-obra-adjuntar-archivo.png',
+        imagesUrl: [
+          'reporte-de-obra/reporte-obra-adjuntar-archivo.png',
+          'reporte-de-obra/reporte-obra-editar-reporte.png',
+          'reporte-de-obra/reporte-obra-importar-imagenes.png',
+          'reporte-de-obra/reporte-obra-menu-slider.png',
+          'reporte-de-obra/reporte-obra-menu.png',
+          'reporte-de-obra/reporte-obra-mostrar-reporte.png',
+          'reporte-de-obra/reporte-obra-nuevo-reporte.png',
+        ]
       }
     },
     {
@@ -85,7 +99,13 @@ export class AppComponent {
           tools: '',
           country: ''
         },
-        imageUrl: 'xml/xml-menu.png',
+        imagesUrl: [
+          'xml/xml-menu.png',
+          'xml/xml-archivos.png',
+          'xml/xml-arrastrar-archivos-xml.png',
+          'xml/xml-menu-dos.png',
+          'xml/xml-menu-slider.png',
+        ],
       }
     },
     {
@@ -101,7 +121,16 @@ export class AppComponent {
           tools: '',
           country: ''
         },
-        imageUrl: 'segared/tabla-usuarios.png',
+        imagesUrl: [
+          'segared/tabla-usuarios.png',
+          'segared/clientes.png',
+          'segared/empresas.png',
+          'segared/navbar.png',
+          'segared/nuevo-usuario.png',
+          'segared/productos.png',
+          'segared/tabla-actividades-ultimas-cotizaciones.png',
+          'segared/tabla-registro-ultimos-movimientos.png',
+        ]
       }
     },
     {
@@ -117,7 +146,11 @@ export class AppComponent {
           tools: '',
           country: ''
         },
-        imageUrl: 'refactorizar-codigo/lista-empleados-slider.png',
+        imagesUrl: [
+          'refactorizar-codigo/lista-empleados-slider.png',
+          'refactorizar-codigo/add-employee.png',
+          'refactorizar-codigo/filter.png',
+        ]
       }
     },
     {
@@ -133,7 +166,11 @@ export class AppComponent {
           tools: '',
           country: ''
         },
-        imageUrl: 'refactorizar-codigo/lista-empleados-slider.png',
+        imagesUrl: [
+          'refactorizar-codigo/lista-empleados-slider.png',
+          'refactorizar-codigo/add-employee.png',
+          'refactorizar-codigo/filter.png',
+        ]
       }
     },
   ];
@@ -142,7 +179,6 @@ export class AppComponent {
   visibleProjects = 3;
   imageWidth = 400;
   imageHeight = 200;
-  numDots = 0; // TODO: Definir una variable, que el slider service distinga entre home y el popup
 
   constructor(public popup: PopupService) {}
 

@@ -42,9 +42,6 @@ li {
 
 button {
     position: absolute;
-    right: 10px;
-    top: 10px;
-    border-radius: 50%;
     z-index: 1;
     padding: .4rem;
     font-size: 1rem;
@@ -60,6 +57,12 @@ article {
 
 a:hover {
     border-bottom: 1px solid var(--grey-muted);
+}
+
+.btn-close {
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
 }
 
 .popup {
@@ -94,13 +97,21 @@ a:hover {
     min-width: 300px;
     max-height: 500px;
     flex: 1.3 1 620px;
+    position: relative;
 }
 
-/* TODO: Ajustar una imagen, y que sea responsive */
-/* .picture {
-    width: 100px;
-    height: 100px;
-    background-color: var(--red-muted);
-    min-width: inherit;
-} */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    right: none;
+}
 
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}

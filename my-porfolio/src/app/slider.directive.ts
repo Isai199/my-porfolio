@@ -10,12 +10,12 @@ export class SliderDirective {
   // TODO:
   // 1. Implementar los dots aqui, y que sean opcionales.
   // 2. En el slider de home, no es responsivo, hacer que detecte el tamano de la venta y ajustar 'visibleItems' en base a ello
-  // 3. Implementar la funcionalidad de 'solo' mover los slider al popup para mover las imagenes
   
   @Input() items: any[] = [];
   @Input() imageWidth = 400;
   @Input() imageHeight = 200;
   @Input() visibleItems = 3;
+  @Input() isDotAvailable = false;
   private prevButton: HTMLElement | null = null;
   private nextButton: HTMLElement | null = null;
   private dotSapn: HTMLElement | null = null;
@@ -30,7 +30,10 @@ export class SliderDirective {
   ngOnInit() {
     this.slideCount = this.items.length;
     this.showSlide(this.currentIndex);
-    this.createDotElement();
+    if (this.isDotAvailable) {
+      this.createDotElement();
+    }
+    console.log(this.items);
   }
   
   @HostListener('window:resize', ['$event'])
