@@ -19,6 +19,7 @@ import { SliderDirective } from './slider.directive';
 export class AppComponent {
   title = 'my-porfolio';
 
+  // TODO: Recivir estos json, de una bds
   companyUrls = [
     {
       name: 'emkode',
@@ -138,75 +139,40 @@ export class AppComponent {
   ];
 
   
-  
+  visibleProjects = 3;
   imageWidth = 400;
   imageHeight = 200;
-  numDots = 0;
+  numDots = 0; // TODO: Definir una variable, que el slider service distinga entre home y el popup
 
   constructor(public popup: PopupService) {}
 
-  // ngOnInit() {
-  //   this.updateVisibleProjects();
-  //   //this.startAutoSlide();
-  // }
+  // TODO: Chacar si puedo minimizar este codigo, o moverlo a la directiva slider
+  ngOnInit() {
+    this.updateVisibleProjects();
+  }
 
-  // @HostListener('window:resize', ['$event'])
-  // onResize() {
-  //   this.updateVisibleProjects();
-  // }
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.updateVisibleProjects();
+  }
 
-  // FIXME: Al cambiar de tamano de la pantalla, no siempre vuelve a mostrar todos los proyectos.
-  // updateVisibleProjects() {
-  //   const width = window.innerWidth;
-  //   if (width < 600) {
-  //     this.visibleProjects = 1;
-  //     this.imageWidth = 250;
-  //     this.imageHeight = 150;
-  //   } else if(width >= 600 && width < 900) {
-  //     this.visibleProjects = 2;
-  //     this.imageWidth = 250;
-  //     this.imageHeight = 150;
-  //   } else {
-  //     this.visibleProjects = 3;
-  //     this.imageWidth = 400;
-  //     this.imageHeight = 200;
-  //   }
-  // }
-  
-  // ngOnDestroy() {
-  //   clearInterval(this.intervalId);
-  // }
-  
-  // TODO: arrglar el bug, de que se muestran de manera aleatoria los items o proyectos
-  // TODO: Analizar si los proyectos, deben mostrarse de manera aleatoria
-  // startAutoSlide() {
-  //   this.intervalId = setInterval(() => {
-  //     this.nextSlide();
-  //   }, 3000);
-  // }
-  
-  // NOTE: AL parecer el slider funciona bien con 6 items o proyectos
-  // nextSlide() {
-  //   this.currentIndex = (this.currentIndex + this.visibleProjects) % this.projects.length;
-  // }
-  
-  // previousSlide() {
-  //   this.currentIndex = (this.currentIndex - this.visibleProjects + this.projects.length) % this.projects.length;
-  // }
-  
-  // goToSlide(index: number) {
-  //   this.currentIndex = index * this.visibleProjects;
-  // }
-
-  // getDotCount(): number {
-  //   this.numDots = Math.floor(this.currentIndex / this.visibleProjects);
-  //   return Math.ceil(this.projects.length / this.visibleProjects);
-  // }
-
-  // generateDotArray(): number[] {
-  //   let newArray = Array(this.getDotCount());
-  //   return newArray;
-  // }
+  // FIXME: Al cambiar de tamano de la pantalla(con el comando wndow + flechas), no siempre vuelve a mostrar todos los proyectos.
+  updateVisibleProjects() {
+    const width = window.innerWidth;
+    if (width < 600) {
+      this.visibleProjects = 1;
+      this.imageWidth = 250;
+      this.imageHeight = 150;
+    } else if(width >= 600 && width < 900) {
+      this.visibleProjects = 2;
+      this.imageWidth = 250;
+      this.imageHeight = 150;
+    } else {
+      this.visibleProjects = 3;
+      this.imageWidth = 400;
+      this.imageHeight = 200;
+    }
+  }
 }
 
 // TODO: las interfaces, hay que declararlas en un archivo diferente con el comando de angular
