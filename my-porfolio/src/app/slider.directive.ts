@@ -8,8 +8,7 @@ import { dot } from 'node:test/reporters';
 export class SliderDirective {
 
   // TODO:
-  // 1. Implementar los dots aqui, y que sean opcionales.
-  // 2. En el slider de home, no es responsivo, hacer que detecte el tamano de la venta y ajustar 'visibleItems' en base a ello
+  // 1. Ver si se puede reducir el codigo aun mas, y que sea mas eficiente.
   
   @Input() items: any[] = [];
   @Input() imageWidth = 400;
@@ -33,12 +32,14 @@ export class SliderDirective {
     if (this.isDotAvailable) {
       this.createDotElement();
     }
-    console.log(this.items);
   }
   
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.showSlide(this.currentIndex);
+    if (this.isDotAvailable) {
+      this.createDotElement();
+    }
   }
   
   ngAfterViewInit() {
@@ -71,7 +72,7 @@ export class SliderDirective {
   }
   
   showSlide(startIndex: number) {
-    const slideElements = this.el.nativeElement.querySelectorAll('li'); // TODO: checar si 'li' element afecta en el popup, en home si funciona
+    const slideElements = this.el.nativeElement.querySelectorAll('li');
     slideElements.forEach((slide: any, i: number) => {
       if (i >= startIndex && i < startIndex + this.visibleItems) {
         this.renderer.setStyle(slide, 'display', 'block');
@@ -79,32 +80,50 @@ export class SliderDirective {
         this.renderer.setStyle(slide, 'display', 'none');
       }
     });
-  }
-  
-  createDotElement() { // TODO: Hacer que los dots, sean reponsivos al numero de items que se puedan mostrar(como al cambiar el tamano de la ventana)
-    for (let i = 0; i < this.generateDotArray().length; i++) {
-      const dotElement = this.renderer.createElement('span');
-      const dotContainer = this.el.nativeElement.querySelector('.dots');
-      dotElement.classList.add('dot');
-      if (i == this.numDots) {
-        this.renderer.addClass(dotElement, 'active');
-      }
-      if (dotElement) {
-        this.renderer.listen(dotElement, 'click', (e) => this.goToSlide(e,i));// FIXME: genera error
-      }
-      dotContainer.appendChild(dotElement);
-      
-      
+    if (this.isDotAvailable) {
+      this.isDotActive(startIndex);
     }
   }
   
-  goToSlide(dotElement: HTMLElement, index: number) { // TODO: Implementar una referencia al elemento span seleccionado, para marcarlo con la clase active.
+  createDotElement() {
+    const dotContainer = this.el.nativeElement.querySelector('.dots');
+    const dotsElements = this.el.nativeElement.querySelectorAll('.dots span');
+    dotsElements.forEach((dot: any) => {
+      this.renderer.removeChild(dotContainer, dot);
+    });
+    for (let i = 0; i < this.generateDotArray().length; i++) {
+      const dotElement = this.renderer.createElement('span');
+      dotElement.classList.add('dot');
+      if (i === this.numDots) {
+        this.renderer.addClass(dotElement, 'active');
+      }
+      if (dotElement) {
+        this.renderer.listen(dotElement, 'click', () => this.goToSlide(i));
+      }
+      dotContainer.appendChild(dotElement);
+    }     
+  }
+    
+  isDotActive(index?: number) {
+    const dots = this.el.nativeElement.querySelectorAll('.dots span');
+    const startIndex = (index != null) ? index : this.currentIndex;
+    this.numDots = Math.floor(startIndex / this.visibleItems);
+    dots.forEach((dot: any, index: number) => {
+      if (index === this.numDots) {
+        this.renderer.addClass(dot, 'active');
+      } else {
+        this.renderer.removeClass(dot, 'active');
+      }
+    });
+  }
+    
+  goToSlide(index: number) {  
     this.currentIndex = index * this.visibleItems;
+    this.isDotActive();
     this.showSlide(this.currentIndex);
   }
 
   getDotCount(): number {
-    this.numDots = Math.floor(this.currentIndex / this.visibleItems);
     return Math.ceil(this.items.length / this.visibleItems);
   }
   
