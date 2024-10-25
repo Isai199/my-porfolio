@@ -80,6 +80,10 @@ a:hover {
 }
 
 
+.popup ul li {
+    display: flex;
+}
+
 .popup ul li span:nth-child(1) {
     flex: 1;
 }
@@ -100,6 +104,7 @@ a:hover {
 
 .container li {
     margin-bottom: 0;
+    display: flex;
 }
 
 .arrow {

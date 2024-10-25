@@ -36,14 +36,15 @@ export class AppComponent {
   ];
 
 
+  // TODO: colocar en el campo "liveUrl" el link del repositorio o de la pagina
   projects:Projects[] = [
     {
-      name: 'Pryect\'s name',
-      description: 'A little description',
+      name: 'emkode website',
+      description: 'web development',
       image: 'emkode/hero-slider.png',
       allurls: {
         title: 'Web site for Emkode',
-        description: '',
+        description: 'A website that I made together with a designer and a senior tester for the emkode company. This site has info presentations such as members\' history, experience and contact.',
         properties: {
           type: 'website',
           lenguage: 'html, css, js',
@@ -64,16 +65,16 @@ export class AppComponent {
     },
     {
       name: 'work report module',
-      description: 'A little description',
+      description: 'web development',
       image: 'reporte-de-obra/reporte-obra-menu-slider.png',
       allurls: {
         title: 'work report',
-        description: '',
+        description: 'A software project, that helps the company CAO for many administration information of the user report(or cao workers), this site had images, a lot of user information to create a report, and a crud. ',
         properties: {
-          type: '',
-          lenguage: '',
-          tools: '',
-          country: ''
+          type: 'web application',
+          lenguage: 'html, js, css, php',
+          tools: 'bootstrap, sql server, vsc',
+          country: 'Mexico'
         },
         imagesUrl: [
           'reporte-de-obra/reporte-obra-adjuntar-archivo.png',
@@ -88,16 +89,16 @@ export class AppComponent {
     },
     {
       name: 'xml',
-      description: 'A little description',
+      description: 'web development',
       image: 'xml/xml-menu-slider.png',
       allurls: {
         title: 'xml module',
-        description: '',
+        description: 'A software project, that helps the company CAO for importing xml documents extracting its information for then saving them in the dbs, and show that information in a table for the user administrator.',
         properties: {
-          type: '',
-          lenguage: '',
-          tools: '',
-          country: ''
+          type: 'web application',
+          lenguage: 'html, js, css, php',
+          tools: 'bootstrap, sql server, vsc',
+          country: 'Mexico'
         },
         imagesUrl: [
           'xml/xml-menu.png',
@@ -110,16 +111,16 @@ export class AppComponent {
     },
     {
       name: 'segared administration',
-      description: 'A little description',
+      description: 'web development',
       image: 'segared/tabla-usuarios-slider.png',
       allurls: {
         title: 'segared administration crud',
-        description: '',
+        description: 'A software project, for the segared company, basically it was a system that had an administration section with another 5 sections such as users, customers, companies, products and activity registers where the user administrator see, delete, add and update the information.',
         properties: {
-          type: '',
-          lenguage: '',
-          tools: '',
-          country: ''
+          type: 'web application',
+          lenguage: 'html, js, css, php',
+          tools: 'bootstrap, docker, vsc, github',
+          country: 'Mexico'
         },
         imagesUrl: [
           'segared/tabla-usuarios.png',
@@ -135,16 +136,16 @@ export class AppComponent {
     },
     {
       name: 'refactoring',
-      description: 'A little description',
+      description: 'web development',
       image: 'refactorizar-codigo/lista-empleados-slider.png',
       allurls: {
         title: 'refactoring old code',
-        description: '',
+        description: 'This was a personal project that I made for my first programmer job but with spaghetti code, and then I decided to refactor it with my most advanced knowledge of javascript and web design.',
         properties: {
-          type: '',
-          lenguage: '',
-          tools: '',
-          country: ''
+          type: 'web application',
+          lenguage: 'css, js, php, ts',
+          tools: 'vsc, github, laragon, sql server',
+          country: 'Mexico'
         },
         imagesUrl: [
           'refactorizar-codigo/lista-empleados-slider.png',
@@ -154,22 +155,21 @@ export class AppComponent {
       }
     },
     {
-      name: 'refactoring',
-      description: 'A little description',
-      image: 'refactorizar-codigo/lista-empleados-slider.png',
+      name: 'portfolio',
+      description: 'web development',
+      image: 'portfolio/portfolio-hero.png',
       allurls: {
-        title: 'refactoring old code',
-        description: '',
+        title: 'my portfolio',
+        description: 'This is my portfolio, and it was made with angular, and I tried to implement the best practice to build it, and make it easier to read and simpler for the user.',
         properties: {
-          type: '',
-          lenguage: '',
-          tools: '',
-          country: ''
+          type: 'web page',
+          lenguage: 'ts, css, html',
+          tools: 'angular, github, github pages',
+          country: 'Mexico'
         },
         imagesUrl: [
-          'refactorizar-codigo/lista-empleados-slider.png',
-          'refactorizar-codigo/add-employee.png',
-          'refactorizar-codigo/filter.png',
+          'portfolio/portfolio-hero.png',
+          'portfolio/portfolio-projects.png',
         ]
       }
     },
