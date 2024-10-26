@@ -4,7 +4,7 @@
 
         <button class="menu-button" *ngIf="isMobileView" (click)="toggleMenu()">☰</button>
         <ul class="navbar-links" [ngClass]="{'active': isMenuOpen || !isMobileView}" [ngStyle]="currentStyles">
-            <!-- FIX: tanto navbar como footer, al hacer hover como que hay un empujon de elementos debajo de la subraya -->
+            <!-- FIXME: tanto navbar como footer, al hacer hover como que hay un empujon de elementos debajo de la subraya -->
             @for(websiteUrl of websiteUrls; track websiteUrl.name) {
                 <li>
                     <a [href]="websiteUrl.url" class="underlined capitalize">{{websiteUrl.name}}</a>
