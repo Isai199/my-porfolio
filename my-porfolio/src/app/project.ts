@@ -11,3 +11,15 @@ export interface Project {
     },
     imagesUrl: string[]
 }
+
+export interface Projects {
+    name: string,
+    description: string,
+    image: string,
+    allurls: Project
+}
+
+export interface Company {
+    name: string,
+    url: string
+}

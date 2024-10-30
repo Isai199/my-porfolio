@@ -1,5 +1,4 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2, AfterViewInit, Injector } from '@angular/core';
-import { dot } from 'node:test/reporters';
 
 @Directive({
   selector: '[appSlider]',

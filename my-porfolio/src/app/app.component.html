@@ -8,7 +8,7 @@
     <div>
         <p>Junior developer full stack</p>
         <p>
-            @for (companyUrl of companyUrls; track companyUrl.name){
+            @for (companyUrl of housingCompanyList; track companyUrl.name){
                 <a [href]="companyUrl.url" target="_blank" class="underlined uppercase">{{ companyUrl.name }}</a> 
             }
         </p>
@@ -37,8 +37,8 @@
     <h2 class="uppercase">projects</h2>
 
     <!-- TODO: En algunos puntos de pantalla hay desbordamiento y se muestran tre proyectos en lugar de dos pro ejemplo -->
-    <ul class="slider" appSlider [items]="projects" [visibleItems]="visibleProjects" [isDotAvailable]="true">
-        <li class="overflow-hidden" *ngFor="let project of projects">
+    <ul class="slider" *ngIf="housingProjectsList.length > 0" appSlider [items]="housingProjectsList" [visibleItems]="visibleProjects" [isDotAvailable]="true">
+        <li class="overflow-hidden" *ngFor="let project of housingProjectsList">
             <article>
                 <img [src]="project.image" alt="hero de emkode" [width]="imageWidth" [height]="imageHeight" priority>
                 <div>
