@@ -35,7 +35,10 @@
           <span>Live url:</span>
           <!-- TODO: proner un condicional, para los que no tienen pagina o reedireccionar al codigo github -->
           <span>
-            <a type="link" [href]="message.properties.liveUrl" target="_blank">www.{{ message.properties.company }}.com</a>
+            <a *ngIf="message.properties.liveUrl != null; else not_available"  type="link" [href]="message.properties.liveUrl" target="_blank">
+              www.{{ message.properties.urlName }}.com
+            </a>
+            <ng-template #not_available>Not available</ng-template>
           </span>
         </li>
       </ul>

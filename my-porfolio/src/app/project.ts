@@ -6,7 +6,7 @@ export interface Project {
         lenguage: string,
         tools: string,
         country: string,
-        company?: string,
+        urlName?: string,
         liveUrl?: string
     },
     imagesUrl: string[]

@@ -67,8 +67,9 @@ h2 {
 }
 
 .about .wrapper p {
-    line-height: 2.1;
+    line-height: 1.6;
     margin-bottom: 4rem;
+    font-size: 1.1rem;
 }
 
 /* TODO: hacer que el texto no agrande los recuadros, en la descripcion de los proyectos*/

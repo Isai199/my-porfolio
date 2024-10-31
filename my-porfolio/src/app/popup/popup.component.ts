@@ -1,5 +1,5 @@
 import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Project } from '../project';
 import { SliderDirective } from '../slider.directive';
@@ -7,7 +7,7 @@ import { SliderDirective } from '../slider.directive';
 @Component({
   selector: 'app-popup',
   standalone: true,
-  imports: [SliderDirective, NgFor],
+  imports: [SliderDirective, NgFor, NgIf],
   templateUrl: './popup.component.html',
   styleUrl: './popup.component.css',
   animations: [
