@@ -16,7 +16,6 @@ export class SliderDirective {
   @Input() isDotAvailable = false;
   private prevButton: HTMLElement | null = null;
   private nextButton: HTMLElement | null = null;
-  private dotSapn: HTMLElement | null = null;
   private slideCount = 0;
   private currentIndex = 0;
   
@@ -45,7 +44,6 @@ export class SliderDirective {
     this.showSlide(this.currentIndex);
     this.prevButton = this.el.nativeElement.querySelector('.prev-btn');
     this.nextButton = this.el.nativeElement.querySelector('.next-btn');
-    this.dotSapn = this.el.nativeElement.querySelectorAll('.dot');
     
     if (this.prevButton) {
       this.renderer.listen(this.prevButton, 'click', () => this.previousSlide());

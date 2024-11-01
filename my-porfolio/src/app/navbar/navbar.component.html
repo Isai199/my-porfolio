@@ -3,13 +3,17 @@
         <a [href]="homeButtonData.url" class="underlined text-2xl capitalize">{{homeButtonData.name}}</a>
 
         <button class="menu-button" *ngIf="isMobileView" (click)="toggleMenu()">☰</button>
-        <ul class="navbar-links" [ngClass]="{'active': isMenuOpen || !isMobileView}" [ngStyle]="currentStyles">
+        <ul appScroll class="navbar-links" [ngClass]="{'active': isMenuOpen || !isMobileView}" [ngStyle]="currentStyles">
             <!-- FIXME: tanto navbar como footer, al hacer hover como que hay un empujon de elementos debajo de la subraya -->
-            @for(homeSection of homeSections; track homeSection.name) {
-                <li>
-                    <a (click)="scrollIntoView(homeSection.id)" class="underlined capitalize">{{homeSection.name}}</a>
-                </li>
-            }
+            <li>
+                <a class="underlined capitalize">about</a>
+            </li>
+            <li>
+                <a class="underlined capitalize">projects</a>
+            </li>
+            <li>
+                <a class="underlined capitalize">contact</a>
+            </li>
         </ul>
         <!-- Web menu -->
         <ul [ngStyle]="{'display': displayStatus }">

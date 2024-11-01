@@ -1,10 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 import { NgClass, NgIf, NgStyle } from "@angular/common";
+import { ScrollDirective } from '../scroll.directive';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgClass, NgIf, NgStyle],
+  imports: [NgClass, NgIf, NgStyle, ScrollDirective],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -18,26 +19,6 @@ export class NavbarComponent {
   displayStatus = 'inline-flex';
 
   currentStyles: Record<string, string> = {};
-
-  // TODO: colocar reedireccionamiento correspondiente
-  homeSections = [
-    {
-      id: "#section-about",
-      name: "about"
-    },
-    {
-      id: "#section-projects",
-      name: "projects"
-    },
-    {
-      id: "#section-contact",
-      name: "contact"
-    }
-  ];
-
-  scrollIntoView(elen: string) {
-    document.querySelector(elen)?.scrollIntoView({ behavior: 'smooth', block: 'start'});
-  }
 
   ngOnInit() {
     this.checkWindowSize();
