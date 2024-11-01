@@ -1,4 +1,4 @@
-import { Component, HostListener, ComponentFactory } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NgClass, NgIf, NgStyle } from "@angular/common";
 
 @Component({
@@ -20,27 +20,31 @@ export class NavbarComponent {
   currentStyles: Record<string, string> = {};
 
   // TODO: colocar reedireccionamiento correspondiente
-  websiteUrls = [
+  homeSections = [
     {
-      name: "about",
-      url: "https://dictionary.cambridge.org/es/diccionario/ingles-espanol/about",
+      id: "#section-about",
+      name: "about"
     },
     {
-      name: "projects",
-      url: "https://www.microsoft.com/es-mx/microsoft-365/project/project-management-software"
+      id: "#section-projects",
+      name: "projects"
     },
     {
-      name: "contact",
-      url: "https://es.wikipedia.org/wiki/Contact_(pel%C3%ADcula)",
+      id: "#section-contact",
+      name: "contact"
     }
   ];
+
+  scrollIntoView(elen: string) {
+    document.querySelector(elen)?.scrollIntoView({ behavior: 'smooth', block: 'start'});
+  }
 
   ngOnInit() {
     this.checkWindowSize();
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  onResize() {
     this.checkWindowSize();
   }
 
